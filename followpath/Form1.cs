@@ -57,7 +57,14 @@ namespace followpath
             {
                 pictureBox1.Location = new Point(pictureBox1.Location.X + 1, pictureBox1.Location.Y - 1);
                 await Task.Delay(1);
+
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
