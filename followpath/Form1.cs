@@ -64,22 +64,52 @@ namespace followpath
         
         private async void button3_Click(object sender, EventArgs e)
         {
+            int d;
+
             try
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
-                    await Task.Delay(Convert.ToInt32(textBox4.Text));
-                }
-
-
-
-
+                d = Convert.ToInt32(textBox4.Text);
             }
             catch
-            { MessageBox.Show("dont be an idiot, type a number"); }
-       
+            {
+                MessageBox.Show("Enter a number");
+                d = 10;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+                await Task.Delay(d);
+            }
+            
         }
+
+        public partial class Form1 : Form
+        {
+            private Image trump;
+            private Image flag;
+
+            public Form1()
+            {
+                InitializeComponent();
+                trump = Properties.Resources.trump;
+                flag = Properties.Resources.flag;
+            }
+            private void pictureBox1_Click(object sender, EventArgs e)
+            {
+                if (pictureBox1.Image== trump)
+
+            }
+
+
+
+
+
+        }
+
+
+
+
     }
 
 }
